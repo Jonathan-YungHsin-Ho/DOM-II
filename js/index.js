@@ -110,9 +110,13 @@ tl.from(nav2, 0.5, { ease: Power4.easeOut, y: -300 });
 tl.from(nav3, 0.5, { ease: Power4.easeOut, y: -300 });
 tl.from(nav4, 0.5, { ease: Power4.easeOut, y: -300 });
 
-tl.from(dest1, 2, { ease: Elastic.easeOut.config(1, 0.3), x: -400 });
-tl.from(dest3, 2, { ease: Elastic.easeOut.config(1, 0.3), x: 400 });
-tl.from(dest2, 2, { ease: Elastic.easeOut.config(1, 0.3), y: 400 });
+tl.from(dest1, 2, {
+  ease: Elastic.easeOut.config(1, 0.3),
+  x: -400,
+  opacity: 0,
+});
+tl.from(dest3, 2, { ease: Elastic.easeOut.config(1, 0.3), x: 400, opacity: 0 });
+tl.from(dest2, 2, { ease: Elastic.easeOut.config(1, 0.3), y: 400, opacity: 0 });
 // tl.fromTo(
 //   dest2,
 //   2.5,
