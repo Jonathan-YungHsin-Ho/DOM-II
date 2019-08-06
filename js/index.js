@@ -68,9 +68,9 @@ document.addEventListener(
 
 // Event 10: wheel
 const body = document.querySelector('body');
-// window.addEventListener('wheel', event => {
-//   mainNav.style.borderBottom = `${Math.abs(event.deltaY)}px dashed black`;
-// });
+window.addEventListener('wheel', event => {
+  mainNav.style.borderBottom = `${Math.abs(event.deltaY)}px dashed black`;
+});
 
 // preventDefault & stopPropagation
 const navLinks = document.querySelectorAll('.nav-link');
@@ -93,17 +93,27 @@ const dest1 = document.querySelector('.destination');
 const dest2 = document.querySelector('.destination:nth-of-type(2)');
 const dest3 = document.querySelector('.destination:last-of-type');
 
+const nav1 = document.querySelector('.nav-link');
+const nav2 = document.querySelector('.nav-link:nth-of-type(2)');
+const nav3 = document.querySelector('.nav-link:nth-of-type(3)');
+const nav4 = document.querySelector('.nav-link:last-of-type');
+
 const tl = new TimelineMax();
 
-tl.from(logoHeading, 2.5, {
+tl.from(logoHeading, 2, {
   ease: Elastic.easeOut.config(1, 0.2),
   x: -400,
 });
 
+tl.from(nav1, 0.5, { ease: Power4.easeOut, y: -300 });
+tl.from(nav2, 0.5, { ease: Power4.easeOut, y: -300 });
+tl.from(nav3, 0.5, { ease: Power4.easeOut, y: -300 });
+tl.from(nav4, 0.5, { ease: Power4.easeOut, y: -300 });
+
 tl.from(dest1, 2, { ease: Elastic.easeOut.config(1, 0.3), x: -400 });
 tl.from(dest3, 2, { ease: Elastic.easeOut.config(1, 0.3), x: 400 });
 tl.from(dest2, 2, { ease: Elastic.easeOut.config(1, 0.3), y: 400 });
-// TweenLite.fromTo(
+// tl.fromTo(
 //   dest2,
 //   2.5,
 //   { rotation: -8 },
