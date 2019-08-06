@@ -31,8 +31,9 @@ images.forEach(img => {
 // Event 5: mouseover
 const footerTxt = document.querySelector('.footer p');
 footerTxt.addEventListener('mouseover', () => {
-  footerTxt.style.fontSize = '24px';
+  footerTxt.style.fontSize = '28px';
   footerTxt.style.fontWeight = 'bold';
+  footerTxt.style.fontFamily = '"Indie Flower"';
   footerTxt.textContent = footerTxt.textContent
     .split('')
     .sort()
@@ -66,6 +67,14 @@ document.addEventListener(
 );
 
 // Event 10: wheel
+const body = document.querySelector('body');
 window.addEventListener('wheel', event => {
   mainNav.style.borderBottom = `${Math.abs(event.deltaY)}px dashed black`;
 });
+
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(element =>
+  element.addEventListener('click', event => {
+    event.preventDefault();
+  }),
+);
