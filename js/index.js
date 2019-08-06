@@ -75,6 +75,14 @@ window.addEventListener('wheel', event => {
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(element =>
   element.addEventListener('click', event => {
+    element.style.color = '#17A2B8';
     event.preventDefault();
+    event.stopPropagation();
   }),
 );
+
+const navContainer = document.querySelector('.nav');
+navContainer.addEventListener('click', () => {
+  navContainer.style.backgroundColor = 'white';
+  navContainer.style.padding = '15px 10px';
+});
