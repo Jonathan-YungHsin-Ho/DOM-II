@@ -68,10 +68,11 @@ document.addEventListener(
 
 // Event 10: wheel
 const body = document.querySelector('body');
-window.addEventListener('wheel', event => {
-  mainNav.style.borderBottom = `${Math.abs(event.deltaY)}px dashed black`;
-});
+// window.addEventListener('wheel', event => {
+//   mainNav.style.borderBottom = `${Math.abs(event.deltaY)}px dashed black`;
+// });
 
+// preventDefault & stopPropagation
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(element =>
   element.addEventListener('click', event => {
@@ -86,3 +87,25 @@ navContainer.addEventListener('click', () => {
   navContainer.style.backgroundColor = 'white';
   navContainer.style.padding = '15px 10px';
 });
+
+// GSAP
+const dest1 = document.querySelector('.destination');
+const dest2 = document.querySelector('.destination:nth-of-type(2)');
+const dest3 = document.querySelector('.destination:last-of-type');
+
+const tl = new TimelineMax();
+
+tl.from(logoHeading, 2.5, {
+  ease: Elastic.easeOut.config(1, 0.2),
+  x: -400,
+});
+
+tl.from(dest1, 2, { ease: Elastic.easeOut.config(1, 0.3), x: -400 });
+tl.from(dest3, 2, { ease: Elastic.easeOut.config(1, 0.3), x: 400 });
+tl.from(dest2, 2, { ease: Elastic.easeOut.config(1, 0.3), y: 400 });
+// TweenLite.fromTo(
+//   dest2,
+//   2.5,
+//   { rotation: -8 },
+//   { rotation: 0, ease: Elastic.easeOut.config(4, 0.1) },
+// );
