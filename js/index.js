@@ -39,3 +39,11 @@ document.addEventListener(
   'keydown',
   e => (letsGoTxt.textContent = `${e.code}!`),
 );
+
+const price = document.createElement('div');
+const welcomeTxt = document.querySelector('.intro h2');
+window.addEventListener('resize', () => {
+  welcomeTxt.textContent = `Welcome To Fun bus! Only $${
+    window.innerWidth
+  } for a ticket!`;
+});
