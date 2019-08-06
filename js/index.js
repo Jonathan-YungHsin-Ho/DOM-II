@@ -42,8 +42,15 @@ document.addEventListener(
 
 const price = document.createElement('div');
 const welcomeTxt = document.querySelector('.intro h2');
-window.addEventListener('resize', () => {
-  welcomeTxt.textContent = `Welcome To Fun bus! Only $${
-    window.innerWidth
-  } for a ticket!`;
+window.addEventListener(
+  'resize',
+  () =>
+    (welcomeTxt.textContent = `Welcome To Fun bus! Only $${window.innerWidth /
+      10}0 for a ticket!`),
+);
+
+const destHeader = document.querySelector('.content-destination h2');
+destHeader.draggable = 'true';
+document.addEventListener('drag', () => {
+  destHeader.style.fontSize = '18px';
 });
