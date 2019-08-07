@@ -1,22 +1,14 @@
-// const blocks = document.querySelector('.blocks');
 const blockArr = Array.from(document.querySelectorAll('.block'));
-// const red = document.querySelector('.block--red');
-// const blue = document.querySelector('.block--blue');
-// const green = document.querySelector('.block--green');
-// const pink = document.querySelector('.block--pink');
-// const gray = document.querySelector('.block--gray');
 
-blockArr.forEach((block, index) => {
+blockArr.forEach(block => {
   let counter = 0;
   const order = setInterval(() => {
     counter += 1;
     block.addEventListener('click', () => (block.style.order = -1 * counter));
   }, 10);
 
-  //   block.addEventListener('mousemove', event => console.log(event));
-
   block.addEventListener('mousedown', event => {
-    if (event.clientY < 165) {
+    if (event.clientY < 175) {
       let moveRight = 0;
       block.style.position = 'relative';
       const travel = setInterval(() => {
@@ -25,4 +17,11 @@ blockArr.forEach((block, index) => {
       }, 10);
     }
   });
+  console.log(blockArr);
 });
+
+// blockArr.forEach(block => {
+//   const action = TweenMax.to(block, 3, { x: 1000, paused: true });
+//   block.addEventListener('mousedown', () => action.play());
+//   window.addEventListener('mouseup', () => action.reverse());
+// });
