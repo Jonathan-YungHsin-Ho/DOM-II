@@ -123,3 +123,8 @@ tl.from(dest2, 2, { ease: Elastic.easeOut.config(1, 0.3), y: 400, opacity: 0 });
 //   { rotation: -8 },
 //   { rotation: 0, ease: Elastic.easeOut.config(4, 0.1) },
 // );
+const intro = document.querySelector('.intro');
+const tips = document.createElement('p');
+tips.textContent =
+  'Explore the Fun Bus website! Scroll up and down! Click on the logo! Mouse over the nav bar! Mouse over the footer! Double-click on the pictures! Press some keys! Resize the window! Find a draggable header!';
+intro.append(tips);
