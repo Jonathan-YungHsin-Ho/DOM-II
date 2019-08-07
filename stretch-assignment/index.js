@@ -13,12 +13,16 @@ blockArr.forEach((block, index) => {
     block.addEventListener('click', () => (block.style.order = -1 * counter));
   }, 10);
 
-  block.addEventListener('dblclick', () => {
-    let moveRight = 0;
-    block.style.position = 'relative';
-    const travel = setInterval(() => {
-      moveRight += 5;
-      block.style.left = `${moveRight}px`;
-    }, 10);
+  //   block.addEventListener('mousemove', event => console.log(event));
+
+  block.addEventListener('mousedown', event => {
+    if (event.clientY < 165) {
+      let moveRight = 0;
+      block.style.position = 'relative';
+      const travel = setInterval(() => {
+        moveRight += 5;
+        block.style.left = `${moveRight}px`;
+      }, 10);
+    }
   });
 });
